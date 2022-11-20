@@ -6,6 +6,10 @@ public class Main {
         int os = 1;
         int typeosYear = 2021;
         printProgramVersion(os, typeosYear);
+        //Task3
+        int howManyKm = 95;
+        int totalOfDays = calculateDays(howManyKm);
+        System.out.println("Потребуется дней:: " +totalOfDays+ " + срок доставки");
 
     }
 
@@ -31,5 +35,15 @@ public class Main {
         String os = version(type);
         String whatIsTheTime = requiredSoftware(typeOsYear);
         System.out.println("Нужно установить " + whatIsTheTime + " версию ПО для" + os);
+    }
+
+    private static int calculateDays(int howManyKm) {
+        int totalOfDays = 1;
+        int interval = 40;
+        int initialInterval = 20;
+        if (howManyKm > initialInterval) {
+            totalOfDays = totalOfDays + (int) Math.ceil((howManyKm - initialInterval) / (double) interval);
+        }
+        return totalOfDays;
     }
 }
