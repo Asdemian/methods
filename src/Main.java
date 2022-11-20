@@ -9,11 +9,11 @@ public class Main {
         //Task3
         int howManyKm = 95;
         int totalOfDays = calculateDays(howManyKm);
-        System.out.println("Потребуется дней:: " +totalOfDays+ " + срок доставки");
+        System.out.println("Потребуется дней: " +totalOfDays+ " + срок доставки");
 
     }
 
-    private static String version(int type) {
+    private static String getVersion(int type) {
         if (type == 1) {
             return " Android";
         } else if (type == 0) {
@@ -32,7 +32,7 @@ public class Main {
     }
 
     private static void printProgramVersion(int type, int typeOsYear) {
-        String os = version(type);
+        String os = getVersion(type);
         String whatIsTheTime = requiredSoftware(typeOsYear);
         System.out.println("Нужно установить " + whatIsTheTime + " версию ПО для" + os);
     }
