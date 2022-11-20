@@ -1,20 +1,35 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        //Task1
-        int year = 1902;
-        boolean leapYear = leap(year);
-        conclusionYear(year, leapYear);
-    }
-
-    private static boolean leap(int year) {
-        return year % 4 == 0 || year % 400 == 0 && year % 100 == 0;
+        //Task2
+        int os = 1;
+        int typeosYear = 2021;
+        printProgramVersion(os, typeosYear);
 
     }
 
-    private static void conclusionYear(int year, boolean leapYear) {
-        if (leapYear) {
-            System.out.println(year + " Високосный год");
+    private static String version(int type) {
+        if (type == 1) {
+            return " Android";
+        } else if (type == 0) {
+            return " iOS";
+        } else {
+            return "Another";
+        }
+    }
+
+    private static String requiredSoftware(int typeos) {
+        int currentYear = LocalDate.now().getYear();
+        if (typeos >= currentYear) {
+            return "актуальную";
         } else
-            System.out.println(year + " Не високосный год");
+            return "облегченную";
+    }
+
+    private static void printProgramVersion(int type, int typeOsYear) {
+        String os = version(type);
+        String whatIsTheTime = requiredSoftware(typeOsYear);
+        System.out.println("Нужно установить " + whatIsTheTime + " версию ПО для" + os);
     }
 }
